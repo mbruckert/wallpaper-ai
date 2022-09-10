@@ -21,6 +21,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import SplashScreen from './pages/SplashScreen';
 
 setupIonicReact();
 
@@ -31,8 +32,11 @@ const App: React.FC = () => (
         <Route exact path="/home">
           <Home />
         </Route>
+        <Route exact path="/splashscreen">
+          <SplashScreen />
+        </Route>
         <Route exact path="/">
-          <Redirect to="/home" />
+          <Redirect to="/splashscreen" />
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>
