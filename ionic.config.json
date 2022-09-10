@@ -1,0 +1,7 @@
+{
+  "name": "wallpaper-ai",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
