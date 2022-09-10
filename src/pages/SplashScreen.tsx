@@ -7,6 +7,7 @@ import Adam from '../images/adam.png';
 import Sand from '../images/sand.png';
 import Window from '../images/window.png';
 import Logo from '../images/logo.png';
+import Turtle from '../images/turtle.png';
 import { url } from 'inspector';
 import 'animate.css';
 
@@ -16,9 +17,9 @@ export default function SplashScreen() {
 
     const[selectedImage, setSelectedImage] = useState(Window);
     
-    var images = [Cats, Adam, Sand, Window];
+    var images = [Cats, Adam, Sand, Window, Turtle];
     useEffect(() => {
-        setSelectedImage(images[Math.floor(Math.random()*3)]);
+        setSelectedImage(images[Math.floor(Math.random()*4)]);
     }, []);
 
 

@@ -1,7 +1,8 @@
-import { IonContent, IonHeader, IonInput, IonPage, IonTitle, IonToolbar, IonButton, IonItemDivider, IonItem, IonSlide, IonSlides, IonCard, IonCardHeader, IonCardContent, IonCardSubtitle, IonCardTitle, IonImg, IonThumbnail} from '@ionic/react';
+import { IonContent, IonHeader, IonInput, IonPage, IonTitle, IonToolbar, IonButton, IonItemDivider, IonItem, IonSlide, IonSlides, IonCard, IonCardHeader, IonCardContent, IonCardSubtitle, IonCardTitle, IonImg, IonThumbnail, IonIcon} from '@ionic/react';
 import { useState } from 'react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Home.css';
+import { refresh } from 'ionicons/icons';
 
 const Home: React.FC = () => {
 
@@ -24,7 +25,6 @@ const slideOpts = {
         <IonItem>
             <IonInput value={text} placeholder="Describe Your Wallpaper" onIonChange={e => setText(e.detail.value!)}></IonInput>
           </IonItem>
-        <IonButton expand="block">Generate Wallpaper</IonButton>
         
       </IonContent>
 
@@ -72,6 +72,9 @@ const slideOpts = {
         </IonCard>
       </IonSlide>
     </IonSlides>
+      <IonButton href="/result" expand="block">Generate Wallpaper
+        <IonIcon slot="start" icon={refresh}/>
+      </IonButton>
   </IonContent>
     </IonPage>
     
