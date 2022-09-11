@@ -22,6 +22,7 @@ import "./Home.css";
 import AdamSandler from "../images/adam.png";
 import { download } from "ionicons/icons";
 import { useEffect, useState } from "react";
+import Logo from "../images/logo-blue.png";
 import {
   Capacitor,
   Plugins,
@@ -88,7 +89,10 @@ const Result = () => {
             <IonButtons slot="start">
               <IonBackButton defaultHref="/" />
             </IonButtons>
-            <IonTitle>Wallpaper AI</IonTitle>
+            <img
+              src={Logo}
+              style={{ width: "150px", display: "block", margin: "auto" }}
+            ></img>
           </IonToolbar>
         </IonHeader>
 

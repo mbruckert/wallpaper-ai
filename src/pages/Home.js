@@ -25,6 +25,7 @@ import { useState } from "react";
 import ExploreContainer from "../components/ExploreContainer";
 import "./Home.css";
 import { refresh } from "ionicons/icons";
+import Logo from "../images/logo-blue.png";
 
 const Home = () => {
   const [prompt, setPrompt] = useState("");
@@ -106,7 +107,10 @@ const Home = () => {
     <IonPage>
       <IonHeader className="ion-no-border">
         <IonToolbar>
-          <IonTitle>Wallpaper-AI</IonTitle>
+          <img
+            src={Logo}
+            style={{ width: "150px", display: "block", margin: "auto" }}
+          ></img>
         </IonToolbar>
       </IonHeader>
       {!loading && (
@@ -121,7 +125,7 @@ const Home = () => {
 
           <IonSlides pager={true} options={slideOpts}>
             {styles.map((style) => (
-              <IonSlide style={{ width: "200px" }}>
+              <IonSlide>
                 <IonCard>
                   <IonCardHeader style={{ textAlign: "left" }}>
                     <IonImg src={style.image} />
@@ -161,7 +165,12 @@ const Home = () => {
       )}
       {loading && (
         <IonContent fullscreen>
-          <IonSpinner name="crescent" />
+          <div style={{ display: "block", margin: "auto" }}>
+            <IonSpinner
+              name="crescent"
+              style={{ display: "block", margin: "auto", marginTop: "100px" }}
+            />
+          </div>
         </IonContent>
       )}
     </IonPage>
