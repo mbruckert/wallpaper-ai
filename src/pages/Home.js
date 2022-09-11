@@ -76,7 +76,7 @@ const Home = () => {
   ];
 
   const slideOpts = {
-    initialSlide: 1,
+    initialSlide: 0,
     speed: 400,
   };
 
@@ -115,7 +115,7 @@ const Home = () => {
       </IonHeader>
       {!loading && (
         <IonContent fullscreen>
-          <IonItem>
+          <IonItem style={{ marginTop: "20px" }}>
             <IonInput
               value={prompt}
               placeholder="Describe Your Wallpaper"
@@ -123,12 +123,23 @@ const Home = () => {
             ></IonInput>
           </IonItem>
 
-          <IonSlides pager={true} options={slideOpts}>
+          <IonSlides
+            pager={true}
+            options={slideOpts}
+            style={{ marginTop: "50px" }}
+          >
             {styles.map((style) => (
               <IonSlide>
                 <IonCard>
                   <IonCardHeader style={{ textAlign: "left" }}>
-                    <IonImg src={style.image} />
+                    <div
+                      style={{
+                        backgroundImage: `url('${style.image}')`,
+                        width: "90vh",
+                        height: "340px",
+                        backgroundSize: "cover",
+                      }}
+                    ></div>
                     <div style={{ display: "flex", alignItems: "center" }}>
                       <IonItem>
                         <IonCheckbox

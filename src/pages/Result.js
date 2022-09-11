@@ -29,6 +29,7 @@ import {
   CameraResultType,
   FilesystemDirectory,
 } from "@capacitor/core";
+import { Share } from "@capacitor/share";
 const { Camera, Filesystem } = Plugins;
 
 const Result = () => {
@@ -126,10 +127,14 @@ const Result = () => {
         ></div>
         <IonButton
           expand="block"
+          style={{ marginTop: "50px", marginBottom: "100px" }}
           onClick={() => {
-            // const savedFileImage = savePicture(photo, fileName);
-            // const newPhotos = [savedFileImage, ...photos];
-            // console.log(newPhotos);
+            Share.share({
+              title: "Share your wallpaper",
+              text: "Share or save your wallpaper with other apps.",
+              url: "file://",
+              dialogTitle: "Share/Save your Creation",
+            });
           }}
         >
           Download Wallpaper
